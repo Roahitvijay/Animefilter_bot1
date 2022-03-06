@@ -11,7 +11,7 @@
       "bot"
     ],
     "website": "https://www.youtube.com/channel/UCohk_mpuW8SpgZMyOzRdKcA",
-    "repository": "https://github.com/Roahitvijay/Animefilter_bot",
+    "repository": "https://github.com/Roahitvijay/Animefilter_bot1.git",
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot Token From BOT FATHER",
