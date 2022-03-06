@@ -1,14 +1,14 @@
 from random import choice
 from config import START_MSG, FORCES_SUB, BOT_PICS, ADMINS, bot_info, DEV_NAME
-from pyrogram import Client as Animefilter_bot, filters as Worker
+from pyrogram import Client as Animefilter_bot1, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from translation import Animefilter
-from Animefilter_bot.database.broadcast_db import Database
+from Animefilter_bot1.database.broadcast_db import Database
 
 db = Database()
 
 
-@Animefilter_bot.on_message(Worker.private & Worker.command(["start"]))
+@Animefilter_bot1.on_message(Worker.private & Worker.command(["start"]))
 async def start_message(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
@@ -49,7 +49,7 @@ async def start_message(bot, message):
         )
         return
    
-@Animefilter_bot.on_message(Worker.private & Worker.command(["help"]))
+@Animefilter_bot1.on_message(Worker.private & Worker.command(["help"]))
 async def help(bot, message):
     button = [[
      InlineKeyboardButton("🏠 Home", callback_data="start"),
@@ -60,7 +60,7 @@ async def help(bot, message):
         caption=Animefilter.HELP_MSG.format(mention=message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(button))
       
-@Animefilter_bot.on_message(Worker.private & Worker.command(["about"]))
+@Animefilter_bot1.on_message(Worker.private & Worker.command(["about"]))
 async def about(bot, message):
     button = [[
      InlineKeyboardButton("🏠 Home", callback_data="start"),
@@ -68,6 +68,6 @@ async def about(bot, message):
      ]]  
     await message.reply_photo(
         photo = choice(BOT_PICS),
-        caption=Animefilter_bot.ABOUT_MSG.format(mention=message.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME),
+        caption=Animefilter_bot1.ABOUT_MSG.format(mention=message.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME),
         reply_markup=InlineKeyboardMarkup(button))
         
