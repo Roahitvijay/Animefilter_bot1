@@ -1,14 +1,14 @@
-from pyrogram import Client as Animefilter_bot, filters as Worker
+from pyrogram import Client as Animefilter_bot1, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserIsBlocked, PeerIdInvalid
-from Animefilter_bot.database.autofilter_db import is_subscribed, get_file_details
-from Animefilter_bot.database._utils import get_size
+from Animefilter_bot1.database.autofilter_db import is_subscribed, get_file_details
+from Animefilter_bot1.database._utils import get_size
 from translation import Animefilter
 from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS
 
 
 @Animefilter_bot.on_callback_query()
-async def cb_handler(client: Animefilter_bot, query):
+async def cb_handler(client: Animefilter_bot1, query):
     clicked = query.from_user.id
     try:
         typed = query.message.reply_to_message.from_user.id
@@ -193,7 +193,7 @@ async def cb_handler(client: Animefilter_bot, query):
 # ---------- 📁 [ | 𝗚𝗘𝗧 𝗙𝗜𝗟𝗘𝗦 | ] 📁 ---------- #
 
 
-        elif query.data.startswith("Animefilter_bot"):
+        elif query.data.startswith("Animefilter_bot1"):
             ident, file_id = query.data.split("#")
             files_ = await get_file_details(file_id)
             if not files_:
@@ -293,21 +293,21 @@ async def cb_handler(client: Animefilter_bot, query):
               InlineKeyboardButton("🏠 Home", callback_data="start"),
               InlineKeyboardButton("About 😎", callback_data="about")
               ]]               
-            await query.message.edit(text=LuciferMoringstar.HELP_MSG.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=Animefilter.HELP_MSG.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
             buttons = [[
              InlineKeyboardButton("🏠 Home", callback_data="start"),
              InlineKeyboardButton("Close 🗑️", callback_data="close")
              ]]               
-            await query.message.edit(text=LuciferMoringstar.ABOUT_MSG.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=Animefilter.ABOUT_MSG.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "bot_owner":
             buttons = [[
              InlineKeyboardButton('🏠 Home', callback_data="start"),
              InlineKeyboardButton('About 😎', callback_data="about")
              ]]               
-            await query.message.edit(text=LuciferMoringstar.PR0FESS0R_99.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=Animefilter.PR0FESS0R_99.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "pages":
             await query.answer()
