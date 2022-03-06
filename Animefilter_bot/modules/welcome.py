@@ -1,10 +1,10 @@
 import asyncio
-from pyrogram import Client as Animefilter_bot, filters as Worker, emoji
+from pyrogram import Client as Animefilter_bot1, filters as Worker, emoji
 
 MENTION = "{}"  
 MESSAGE = "{} Welcome to {}!" 
 
-@Animefilter_bot.on_message(Worker.new_chat_members)
+@Animefilter_bot1.on_message(Worker.new_chat_members)
 async def welcome(client, message):
 
     new_members = [MENTION.format(message.from_user.mention) for i in message.new_chat_members]
