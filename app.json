@@ -1,0 +1,102 @@
+{
+    "name": "Animefilter_bot",
+    "description": "Super Fast Telegram Auto Filter Bot",
+    "logo": "https://telegra.ph/file/3860fb0ef083abed6c7d8.jpg",
+    "stack": "container",
+    "keywords": [
+      "best",
+      "telegarm",
+      "auto",
+      "filter",
+      "bot"
+    ],
+    "website": "https://www.youtube.com/channel/UCohk_mpuW8SpgZMyOzRdKcA",
+    "repository": "https://github.com/Roahitvijay/Animefilter_bot",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your Bot Token From BOT FATHER",
+            "value": ""
+        },
+        "API_ID": {
+            "description": "Get this value from MT_MytelegramOrg_Bot",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "Get this value from MT_MytelegramOrg_Bot",
+            "value": ""
+        },
+        "CHANNELS": {
+            "description": "Username or ID of channel or group. Separate multiple IDs by space. @MT_ID_Bot",
+            "value": ""
+        },
+        "ADMINS": {
+            "description": "Username or ID of Admin. Separate multiple Admins by space.",
+            "value": ""
+        },
+        "AUTH_USERS": {
+            "description": "Username or ID of users to give access of inline search. Separate multiple users by space.\nLeave it empty if you don't want to restrict bot usage.",
+            "value": "",
+            "required": false
+        },
+        "FORCES_SUB": {
+            "description": "ID of channel.Make sure bot is admin in this channel. Without subscribing this channel users cannot use bot.",
+            "value": "",
+            "required": false
+        },
+        "PICS": {
+            "description": "Add some telegraph link of pictures .",
+            "value": "",
+            "required": false
+        },
+        "START_MSG": {
+            "description": "Welcome message for start command More Information Check Readme.md",
+            "value": "",
+            "required": false
+        },
+        "AUTH_GROUPS": {
+            "description": "ID of groups which bot should work as autofilter, bot can only work in thease groups. If not given , bot can be used in any group.",
+            "value": "",
+            "required": false
+        },
+        "DATABASE_URI": {
+            "description": "Mongodb",
+            "value": ""
+        },
+        "SPELL_MODE": {
+            "description": "Spelling Mode on or off",
+            "value": "on",
+            "required": true
+        },
+        "SPELL_MODE_TEXT": {
+            "description": "Seplling Mode Text For More Info Check Readme.md",
+            "value": "",
+            "required": true
+        },
+        "LOG_CHANNEL": {
+            "description": "Log Channel Use Private Channel Id -100×××× from @MT_ID_Bot",
+            "value": ""
+        },
+        "DEV_NAME": {
+            "description": "Creator Name or Username ",
+            "value": "R0ahit",
+            "required": true
+        },
+        "SUPPORT": {
+            "description": "Your Group Link Private or Public Link (with t.me or https://t.me)",
+            "value": "https://t.me/Animechannel90",
+            "required": true
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
