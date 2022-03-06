@@ -1,10 +1,10 @@
 import re, asyncio, random
 # from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from Animefilter_bot.database._utils import get_size, split_list
-from Animefilter_bot.database.autofilter_db import get_filter_results, get_poster
+from Animefilter_bot1.database._utils import get_size, split_list
+from Animefilter_bot1.database.autofilter_db import get_filter_results, get_poster
 from config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
-from translation import Animefilter_bot
+from translation import Animefilter_bot1
 
 
 #@LuciferMoringstar_Robot.on_message(Worker.text & Worker.group & Worker.incoming & Worker.chat(AUTH_GROUPS) if AUTH_GROUPS else Worker.text & Worker.group & Worker.incoming)
