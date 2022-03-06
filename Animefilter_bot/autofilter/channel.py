@@ -1,10 +1,10 @@
 from pyrogram import Client as Animefilter_bot, filters as Worker
-from Animefilter_bot.database.autofilter_db import save_file
+from Animefilter_bot1.database.autofilter_db import save_file
 from config import CHANNELS, ADMINS
 
 media_filter = Worker.document | Worker.video | Worker.audio
 
-@Animefilter_bot.on_message(Worker.chat(CHANNELS) & media_filter)
+@Animefilter_bot1.on_message(Worker.chat(CHANNELS) & media_filter)
 async def media(bot, message):
 
     for file_type in ("document", "video", "audio"):
@@ -19,7 +19,7 @@ async def media(bot, message):
     await save_file(media)
 
 
-@Animefilter_bot.on_message(Worker.command('channel') & Worker.user(ADMINS))
+@Animefilter_bot1.on_message(Worker.command('channel') & Worker.user(ADMINS))
 async def channel_info(bot, message):
     
     if isinstance(CHANNELS, (int, str)):
