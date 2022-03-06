@@ -17,8 +17,8 @@ import time
 import os
 from random import choice
 from config import ADMINS
-from pyrogram import Client as Animefilter_bot, filters as Worker
-from Animefilter_bot.database.broadcast_db import Database
+from pyrogram import Client as Animefilter_bot1, filters as Worker
+from Animefilter_bot1.database.broadcast_db import Database
 from pyrogram.errors import UserNotParticipant, FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 
 db = Database() 
@@ -42,7 +42,7 @@ async def send_msg(user_id, message):
         return 500, f"{user_id} : {traceback.format_exc()}\n"
 
 
-@Animefilter_bot.on_message(Worker.private & Worker.command(["broadcast", "send"]) & Worker.user(ADMINS) & Worker.reply)
+@Animefilter_bot1.on_message(Worker.private & Worker.command(["broadcast", "send"]) & Worker.user(ADMINS) & Worker.reply)
 async def broadcast_(c, m):
     print("broadcasting......")
     all_users = await db.get_all_users()
