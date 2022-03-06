@@ -1,11 +1,11 @@
 # https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/index.py
 # (Old Code) Thanks To EvamariaTG 
 import logging, os, asyncio
-from pyrogram import Client as Animefilter_bot, filters as Worker
+from pyrogram import Client as Animefilter_bot1, filters as Worker
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import ChannelInvalid, ChatAdminRequired, UsernameInvalid, UsernameNotModified
 from config import ADMINS, LOG_CHANNEL, CURRENT, CANCEL
-from Animefilter_bot.database.autofilter_db import save_file
+from Animefilter_bot1.database.autofilter_db import save_file
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 import re
@@ -49,7 +49,7 @@ async def index_files(bot, query):
     await index_files_to_db(int(lst_msg_id), chat, msg, bot)
 
 
-@Animefilter_bot.on_message((Worker.forwarded | (Worker.regex("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")) & Worker.text ) & Worker.private & Worker.incoming)
+@Animefilter_bot1.on_message((Worker.forwarded | (Worker.regex("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")) & Worker.text ) & Worker.private & Worker.incoming)
 async def send_for_index(bot, message):
     if message.text:
         regex = re.compile("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")
@@ -120,7 +120,7 @@ async def send_for_index(bot, message):
     await message.reply('ThankYou For the Contribution, Wait For My Moderators to verify the files.')
 
 
-@Animefilter_bot.on_message(Worker.command('setskip') & Worker.user(ADMINS))
+@Animefilter_bot1.on_message(Worker.command('setskip') & Worker.user(ADMINS))
 async def set_skip_number(bot, message):
     if ' ' in message.text:
         _, skip = message.text.split(" ")
