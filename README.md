@@ -32,7 +32,7 @@
 - [x] Custom Caption
 
 ### 🧑‍💻 𝗗𝗲𝗽𝗹𝗼𝘆 𝗧𝗼 𝗛𝗲𝗿𝗼𝗸𝘂 👨‍💻
-<a href="https://heroku.com/deploy?template=https://github.com/Roahitvijay/Animefilter_bot"><img src="https://telegra.ph/file/3860fb0ef083abed6c7d8.jpg" alt="PR0FESS0R-99" border="0" height="125" width="200" align="center" /></a>
+<a href="https://heroku.com/deploy?template=https://github.com/Roahitvijay/Animefilter_bot1.git"><img src="https://telegra.ph/file/3860fb0ef083abed6c7d8.jpg" alt="PR0FESS0R-99" border="0" height="125" width="200" align="center" /></a>
 
 
 ### 📍 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗱
