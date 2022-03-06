@@ -11,7 +11,7 @@ class Animefilter_bot(object):
 
 🧑 My Creator : {dev_name}
 
-📦 My Source : [Click Here](https://github.com/Roahitvijay/Animefilter_bot)
+📦 My Source : [Click Here](https://github.com/Roahitvijay/Animefilter_bot1.git)
 
 📺 My Telegram channel : [animepirateschannel](https://t.me/animepirateschannel)
 
