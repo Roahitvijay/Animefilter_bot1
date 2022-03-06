@@ -7,7 +7,7 @@ logging.getLogger().setLevel(logging.ERROR)
 
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
-from Animefilter_bot.database.autofilter_db import Media
+from Animefilter_bot1.database.autofilter_db import Media
 from config import API_ID, API_HASH, B_KEYS, bot_info
 import pyromod.listen
 
@@ -15,7 +15,7 @@ class Animefilter(Client):
 
     def __init__(self):
         super().__init__(
-            "Animefilter_bot",
+            "Animefilter_bot1",
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=B_KEYS,
