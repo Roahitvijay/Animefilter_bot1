@@ -1,10 +1,10 @@
 import logging
-from pyrogram import Client as Animefilter_bot, filters as Worker
-from Animefilter_bot.database.autofilter_db import Media
+from pyrogram import Client as Animefilter_bot1, filters as Worker
+from Animefilter_bot1.database.autofilter_db import Media
 from config import ADMINS
 logger = logging.getLogger(__name__)
 
-@Animefilter_bot.on_message(Worker.command('total') & Worker.user(ADMINS))
+@Animefilter_bot1.on_message(Worker.command('total') & Worker.user(ADMINS))
 async def total(bot, message):
 
     msg = await message.reply("Processing...⏳", quote=True)
