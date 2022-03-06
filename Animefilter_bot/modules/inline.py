@@ -1,14 +1,14 @@
 import logging
-from pyrogram import Client as Animefilter_bot, filters as Worker, emoji
+from pyrogram import Client as Animefilter_bot1, filters as Worker, emoji
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument
-from Animefilter_bot.database._utils import get_size
-from Animefilter_bot.database.autofilter_db import get_search_results, is_subscribed
+from Animefilter_bot1.database._utils import get_size
+from Animefilter_bot1.database.autofilter_db import get_search_results, is_subscribed
 from config import CACHE_TIME, AUTH_USERS, FORCES_SUB, CUSTOM_FILE_CAPTION
 logger = logging.getLogger(__name__)
 cache_time = 0 if AUTH_USERS or FORCES_SUB else CACHE_TIME
 
 
-@Animefilter_bot.on_inline_query(Worker.user(AUTH_USERS) if AUTH_USERS else None)
+@Animefilter_bot1.on_inline_query(Worker.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
 
     if FORCES_SUB and not await is_subscribed(bot, query):
